@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Heart Disease Prediction</title>
+<style>
+body {
+  margin: 0;
+  background-image: url("static\\images\\img.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: rgb(7, 7, 7);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+
+.form-container {
+  background: rgba(255, 86, 86, 0.2); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+input[type=number], select {
+  background: rgba(255, 255, 255, 0.883);
+  width: 48%; 
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: black;
+}
+
+
+button {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid rgb(237, 11, 11);
+  background-color: rgb(237, 11, 11); 
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+button:hover {
+  background-color: rgb(180, 0, 0); 
+  border-color: rgb(180, 0, 0);
+  transform: scale(1.05); 
+}
+
+h1 {
+  color: rgb(205, 18, 18);
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<h1>Heart-Disease Patients Prediction</h1>
+<div class="form-container">
+  <form action="/predict" method="POST"> 
+    <div class="input-container">
+      <input type="number" name="age" placeholder="Age" required="required" step="any"/>
+      <input type="number" name="sex" placeholder="Sex" required="required" step="any"/>
+      <input type="number" name="cp" placeholder="Chest pain" required="required" step="any"/>
+      <input type="number" name="trestbps" placeholder="Trestbps" required="required" step="any"/>
+      <input type="number" name="chol" placeholder="Cholesterol" required="required" step="any"/>
+      <input type="number" name="fbs" placeholder="Fbs" required="required" step="any"/>
+      <input type="number" name="restecg" placeholder="Restecg" required="required" step="any"/>
+      <input type="number" name="thalach" placeholder="Thalachh" required="required" step="any"/>
+      <input type="number" name="exang" placeholder="Exang" required="required" step="any"/>
+      <input type="number" name="oldpeak" placeholder="Oldpeak" required="required" step="any"/>
+      <input type="number" name="slope" placeholder="Slope" required="required" step="any"/>
+      <input type="number" name="ca" placeholder="Ca" required="required" step="any"/>
+      <input type="number" name="thal" placeholder="Thal" required="required" step="any"/>
+    </div>
+    <button type="submit">Predict</button>
+  </form>
+</div>
+
+<div> <br> <br>
+  {{prediction}}
+</div>
+
+</body>
+</html>
